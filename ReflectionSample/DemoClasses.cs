@@ -36,7 +36,7 @@ public class Person: ITalk
         Name = name;
     }
 
-    public Person(string name, int age)
+    protected Person(string name, int age)
     {
         Console.WriteLine($"A person with name {name} ang age {age} is being created using a private constructor");
         Name = name;
