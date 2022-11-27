@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "7yWulXzL3ys2KKkFj7ZnY/R7ib4Y/wenGU5y++Lx8D8OkG4RGpiI8/8Oo5v9t5EukKos5Aq0HANm4YSN1NSiAA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zeynels\\RiderProjects\\ReflactionInCSharp\\ReflectionSample\\ReflectionSample.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://192.168.0.25:8081/repository/nuget-hosted'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

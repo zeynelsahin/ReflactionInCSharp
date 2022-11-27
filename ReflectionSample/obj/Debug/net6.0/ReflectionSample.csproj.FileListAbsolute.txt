@@ -1,0 +1,15 @@
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\ReflectionSample.exe
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\ReflectionSample.deps.json
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\ReflectionSample.runtimeconfig.json
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\ReflectionSample.dll
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\ReflectionSample.pdb
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.csproj.AssemblyReference.cache
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.AssemblyInfoInputs.cache
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.AssemblyInfo.cs
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.csproj.CoreCompileInputs.cache
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.dll
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\refint\ReflectionSample.dll
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.pdb
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.genruntimeconfig.cache
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ref\ReflectionSample.dll
