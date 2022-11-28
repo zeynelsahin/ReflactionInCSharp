@@ -48,6 +48,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "ReflectionMagic": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             }
           },
           "imports": [

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/8kB4OWzN1Y6MeBjdmm5l4LEnUT9yhDEOvyCEPN4TvhTQljpSelv/PQTKR0Ifth3/WMIkLeGPPTQHDRX9nC3tA==",
+  "dgSpecHash": "0X3ezORIeIMB2GIPfocACne4kdJZQciUwAMNOTQP93ve1W//62ke/AlyQHcJa4aoBCzNdKg56ydL4zRqhy3KaA==",
   "success": true,
   "projectFilePath": "C:\\Users\\zeynels\\RiderProjects\\ReflactionInCSharp\\ReflectionSample\\ReflectionSample.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zeynels\\.nuget\\packages\\microsoft.csharp\\4.4.1\\microsoft.csharp.4.4.1.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
@@ -13,6 +14,7 @@
     "C:\\Users\\zeynels\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\6.0.0\\microsoft.extensions.fileproviders.physical.6.0.0.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\microsoft.extensions.filesystemglobbing.6.0.0.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\zeynels\\.nuget\\packages\\reflectionmagic\\4.1.0\\reflectionmagic.4.1.0.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\zeynels\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"

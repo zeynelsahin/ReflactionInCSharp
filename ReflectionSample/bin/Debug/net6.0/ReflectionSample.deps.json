@@ -9,12 +9,14 @@
       "ReflectionSample/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "6.0.0",
-          "Microsoft.Extensions.Configuration.Json": "6.0.0"
+          "Microsoft.Extensions.Configuration.Json": "6.0.0",
+          "ReflectionMagic": "4.1.0"
         },
         "runtime": {
           "ReflectionSample.dll": {}
         }
       },
+      "Microsoft.CSharp/4.4.1": {},
       "Microsoft.Extensions.Configuration/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
@@ -122,6 +124,17 @@
           }
         }
       },
+      "ReflectionMagic/4.1.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReflectionMagic.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
+          }
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Text.Encodings.Web/6.0.0": {
         "dependencies": {
@@ -141,6 +154,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.CSharp/4.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A5hI3gk6WpcBI0QGZY6/d5CCaYUxJgi7iENn1uYEng+Olo8RfI5ReGVkjXjeu3VR3srLvVYREATXa2M0X7FYJA==",
+      "path": "microsoft.csharp/4.4.1",
+      "hashPath": "microsoft.csharp.4.4.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/6.0.0": {
       "type": "package",
@@ -204,6 +224,13 @@
       "sha512": "sha512-9+PnzmQFfEFNR9J2aDTfJGGupShHjOuGw4VUv+JB044biSHrnmCIMD+mJHmb2H7YryrfBEXDurxQ47gJZdCKNQ==",
       "path": "microsoft.extensions.primitives/6.0.0",
       "hashPath": "microsoft.extensions.primitives.6.0.0.nupkg.sha512"
+    },
+    "ReflectionMagic/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5gsbb2VLQVS//2DjyOWztkd1JaT5B4M3qFXs1n40I8E7SEVSP19CEGLT8Gf++d2YB4UkZf4gE+FZ8QWBbG3Dng==",
+      "path": "reflectionmagic/4.1.0",
+      "hashPath": "reflectionmagic.4.1.0.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",

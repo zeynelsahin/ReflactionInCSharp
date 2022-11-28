@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.AccessControl;
 using Microsoft.Extensions.Configuration;
+using ReflectionMagic;
 using ReflectionSample;
 
 var _networkMonitorSettings = new NetworkMonitorSettings();
@@ -11,71 +12,84 @@ MethodInfo _warningServiceMethod;
 object _warningService = null;
 List<object> _warningServiceParameterValues;
 
-var myList = new List<Person>();
-Console.WriteLine(myList.GetType().Name);
+var person = new Person("Zeynel");
+var privateField = person.GetType().GetField("_aPrivateField", BindingFlags.Instance | BindingFlags.NonPublic);
+privateField.SetValue(person,"New value");
 
-Console.WriteLine(myList.GetType());
-var myDictionary = new Dictionary<string, int>();
-Console.WriteLine(myDictionary.GetType());
+person.AsDynamic()._aPrivateField = "updated";
+Console.ReadLine();
+//Generics();
+// BootStrapFromConfiguration();
+//
+// Console.WriteLine("Monitoring network something went wrong");
+// Warn();
 
-var dictionaryType = myDictionary.GetType();
-foreach (var keyValuePair in dictionaryType.GenericTypeArguments)
+void Generics()
 {
-    Console.WriteLine(keyValuePair);
-}
+    var myList = new List<Person>();
+    Console.WriteLine(myList.GetType().Name);
 
-foreach (var argument in dictionaryType.GetGenericArguments())
-{
-    Console.WriteLine(argument);
-}
+    Console.WriteLine(myList.GetType());
+    var myDictionary = new Dictionary<string, int>();
+    Console.WriteLine(myDictionary.GetType());
 
-var openDictionary = typeof(Dictionary<,>);
-foreach (var argument in openDictionary.GenericTypeArguments)
-{
-    Console.WriteLine(argument);
-}
+    var dictionaryType = myDictionary.GetType();
+    foreach (var keyValuePair in dictionaryType.GenericTypeArguments)
+    {
+        Console.WriteLine(keyValuePair);
+    }
 
-foreach (var argument in openDictionary.GetGenericArguments())
-{
-    Console.WriteLine(argument);
-}
+    foreach (var argument in dictionaryType.GetGenericArguments())
+    {
+        Console.WriteLine(argument);
+    }
 
-var createdInstance = Activator.CreateInstance(typeof(List<Person>));
-Console.WriteLine(createdInstance.GetType());
+    var openDictionary = typeof(Dictionary<,>);
+    foreach (var argument in openDictionary.GenericTypeArguments)
+    {
+        Console.WriteLine(argument);
+    }
 
+    foreach (var argument in openDictionary.GetGenericArguments())
+    {
+        Console.WriteLine(argument);
+    }
+
+    var createdInstance = Activator.CreateInstance(typeof(List<Person>));
+    Console.WriteLine(createdInstance.GetType());
+    
 // var createdResult = Activator.CreateInstance(typeof(Result<>));
 
 // var openResultType= typeof(Result<>);
 // var closedResultType = openResultType.MakeGenericType(typeof(Person));
 // var createdResult = Activator.CreateInstance(closedResultType);
 
-var openResultType = Type.GetType("ReflectionSample.Result`1");
-var closedResultType = openResultType.MakeGenericType(Type.GetType("ReflectionSample.Person"));
-var createdResult = Activator.CreateInstance(closedResultType);
+    var openResultType = Type.GetType("ReflectionSample.Result`1");
+    var closedResultType = openResultType.MakeGenericType(Type.GetType("ReflectionSample.Person"));
+    var createdResult = Activator.CreateInstance(closedResultType);
 
-Console.WriteLine(createdResult.GetType());
+    Console.WriteLine(createdResult.GetType());
 
-var methodInfo = closedResultType.GetMethod("AlterAndReturnValue");
-Console.WriteLine(methodInfo);
-var genericMethodInfo = methodInfo.MakeGenericMethod(typeof(Employee));
-genericMethodInfo.Invoke(createdResult, new object?[] { new Employee() });
+    var methodInfo = closedResultType.GetMethod("AlterAndReturnValue");
+    Console.WriteLine(methodInfo);
+    var genericMethodInfo = methodInfo.MakeGenericMethod(typeof(Employee));
+    genericMethodInfo.Invoke(createdResult, new object?[] { new Employee() });
 
-var ionContainer = new IoCCOntainer();
-ionContainer.Register<IWaterService,TapWaterService>();
-var waterService = ionContainer.Resolve<IWaterService>();
+    var ionContainer = new IoCCOntainer();
+    ionContainer.Register<IWaterService,TapWaterService>();
+    var waterService = ionContainer.Resolve<IWaterService>();
 
-ionContainer.Register<IBeanService<Catimor>,ArabicaBeanService<Catimor>>();
+    ionContainer.Register<IBeanService<Catimor>,ArabicaBeanService<Catimor>>();
 
-ionContainer.Register(typeof(IBeanService<>),typeof(ArabicaBeanService<>));
-ionContainer.Register<ICoffeeService,CoffeeService>();
-var coffeeService = ionContainer.Resolve<ICoffeeService>();
+    ionContainer.Register(typeof(IBeanService<>),typeof(ArabicaBeanService<>));
+    ionContainer.Register<ICoffeeService,CoffeeService>();
+    var coffeeService = ionContainer.Resolve<ICoffeeService>();
 
-Console.ReadLine();
-//
-// BootStrapFromConfiguration();
-//
-// Console.WriteLine("Monitoring network something went wrong");
-// Warn();
+    Console.ReadLine();
+}
+
+
+
 
 void Warn()
 {

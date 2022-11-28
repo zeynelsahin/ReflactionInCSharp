@@ -24,3 +24,4 @@ C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net
 C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\obj\Debug\net6.0\ReflectionSample.csproj.CopyComplete
+C:\Users\zeynels\RiderProjects\ReflactionInCSharp\ReflectionSample\bin\Debug\net6.0\ReflectionMagic.dll
