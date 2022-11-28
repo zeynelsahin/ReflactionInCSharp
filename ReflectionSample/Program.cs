@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using Microsoft.Extensions.Configuration;
 using ReflectionSample;
 
@@ -10,11 +11,71 @@ MethodInfo _warningServiceMethod;
 object _warningService = null;
 List<object> _warningServiceParameterValues;
 
+var myList = new List<Person>();
+Console.WriteLine(myList.GetType().Name);
 
-BootStrapFromConfiguration();
+Console.WriteLine(myList.GetType());
+var myDictionary = new Dictionary<string, int>();
+Console.WriteLine(myDictionary.GetType());
 
-Console.WriteLine("Monitoring network something went wrong");
-Warn();
+var dictionaryType = myDictionary.GetType();
+foreach (var keyValuePair in dictionaryType.GenericTypeArguments)
+{
+    Console.WriteLine(keyValuePair);
+}
+
+foreach (var argument in dictionaryType.GetGenericArguments())
+{
+    Console.WriteLine(argument);
+}
+
+var openDictionary = typeof(Dictionary<,>);
+foreach (var argument in openDictionary.GenericTypeArguments)
+{
+    Console.WriteLine(argument);
+}
+
+foreach (var argument in openDictionary.GetGenericArguments())
+{
+    Console.WriteLine(argument);
+}
+
+var createdInstance = Activator.CreateInstance(typeof(List<Person>));
+Console.WriteLine(createdInstance.GetType());
+
+// var createdResult = Activator.CreateInstance(typeof(Result<>));
+
+// var openResultType= typeof(Result<>);
+// var closedResultType = openResultType.MakeGenericType(typeof(Person));
+// var createdResult = Activator.CreateInstance(closedResultType);
+
+var openResultType = Type.GetType("ReflectionSample.Result`1");
+var closedResultType = openResultType.MakeGenericType(Type.GetType("ReflectionSample.Person"));
+var createdResult = Activator.CreateInstance(closedResultType);
+
+Console.WriteLine(createdResult.GetType());
+
+var methodInfo = closedResultType.GetMethod("AlterAndReturnValue");
+Console.WriteLine(methodInfo);
+var genericMethodInfo = methodInfo.MakeGenericMethod(typeof(Employee));
+genericMethodInfo.Invoke(createdResult, new object?[] { new Employee() });
+
+var ionContainer = new IoCCOntainer();
+ionContainer.Register<IWaterService,TapWaterService>();
+var waterService = ionContainer.Resolve<IWaterService>();
+
+ionContainer.Register<IBeanService<Catimor>,ArabicaBeanService<Catimor>>();
+
+ionContainer.Register(typeof(IBeanService<>),typeof(ArabicaBeanService<>));
+ionContainer.Register<ICoffeeService,CoffeeService>();
+var coffeeService = ionContainer.Resolve<ICoffeeService>();
+
+Console.ReadLine();
+//
+// BootStrapFromConfiguration();
+//
+// Console.WriteLine("Monitoring network something went wrong");
+// Warn();
 
 void Warn()
 {
@@ -31,12 +92,10 @@ void Warn()
 
 void BootStrapFromConfiguration()
 {
-   
-    
     var appSettingConfig = new ConfigurationBuilder().AddJsonFile("appsettings.json", true
-        , true).Build();
-    appSettingConfig.Bind("NetworkMonitorSettings",_networkMonitorSettings);
-    _warninServiceType = Assembly.GetExecutingAssembly().GetType(_networkMonitorSettings.WarningService);
+        , true).Build();// dosya build ediliyor
+    appSettingConfig.Bind("NetworkMonitorSettings",_networkMonitorSettings);// dosya serialize ediliyor
+    _warninServiceType = Assembly.GetExecutingAssembly().GetType(_networkMonitorSettings.WarningService); // Class oluşturuluyor
     if (_warninServiceType==null)
     {
         throw new Exception("Configuration is invalid - warning service not found");
